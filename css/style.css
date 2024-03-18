@@ -13,10 +13,12 @@
 */
 #container {
     display: flex;
+    flex-wrap: wrap;
     min-height: 100vh;
     background: rgba(68, 117, 136, 0.548);
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
 .card {
@@ -28,22 +30,38 @@
     width: 300px;
 /* On définie les coins arrondie de chaque "card"
 */
-    border-radius: 10px;  
+    border-radius: 10px; 
+    /*margin: 10px; */
+
+ /* Couleur de l'image principal et l'image du coeur sont cachés si ne pas mettre le curseur sur eux 
+ */   
+    overflow: hidden;
     border: 1px solid black;
     /* durée de l'animation de cards
     */
     transition: 0.5s; 
 }
-/* animation de cards
-*/
+/* animation de cards en axe vertical
+
 .card:hover {
     transform: translateY(-15px);
+} */
+.card:hover .coeur {
+    left: 0;
+    opacity: 1;
+}
+/* on créé la loupe (zoom)
+*/
+.card:hover .card-header img {
+    transform: scale(1.1);
 }
 
 /* On définie la hauteur de chaque card
 */
 .card-header {
+    position:relative;
     height: 200px;
+    overflow: hidden;
 }
 
 /* On cible l'élement "image"
@@ -55,22 +73,16 @@
 /* pour mettre l'image en noir et blanc 100%
 */   
     filter: grayscale(1);
-/* Durée
-*/
     transition: 0.5s;
 }
-
 .card-header img:hover {
     filter: grayscale(0);
 }
-/* On d"finie la zone de text
+/* On définie la zone de text
 */
 .card-text {
     padding: 30px;
 }
-
-/*les paramètres du titre
-*/
 .card-text h1 {
     font-size: 25px;
     margin-bottom: 10px;
@@ -83,4 +95,22 @@
 .card-text p {
     font-size: 14px;
     color: rgb(147, 147, 147, 147);
+    font-weight: 300;
+}
+.coeur {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: rgb(219, 63, 99);
+    font-size: 20px;
+    position: absolute;
+    top: 0;
+    left: -40px;
+    transition: 1s;
+    opacity: 0;
+}
+.coeur a {
+    color: #fff;
 }
