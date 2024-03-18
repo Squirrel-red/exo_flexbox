@@ -29,7 +29,15 @@
 /* On définie les coins arrondie de chaque "card"
 */
     border-radius: 10px;  
-    border: 1px solid black; 
+    border: 1px solid black;
+    /* durée de l'animation de cards
+    */
+    transition: 0.5s; 
+}
+/* animation de cards
+*/
+.card:hover {
+    transform: translateY(-15px);
 }
 
 /* On définie la hauteur de chaque card
