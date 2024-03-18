@@ -61,6 +61,8 @@
     padding: 30px;
 }
 
+/*les paramètres du titre
+*/
 .card-text h1 {
     font-size: 25px;
     margin-bottom: 10px;
@@ -68,7 +70,8 @@
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     
 }
-
+/* les paramètres du text
+*/
 .card-text p {
     font-size: 14px;
     color: rgb(147, 147, 147, 147);
